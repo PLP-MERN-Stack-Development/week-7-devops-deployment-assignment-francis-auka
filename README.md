@@ -1,78 +1,144 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19954484&assignment_repo_type=AssignmentRepo)
-# Deployment and DevOps for MERN Applications
+# MERN Assignment App
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+This is a full-stack MERN (MongoDB, Express.js, React, Node.js) application built as part of a school assignment. It allows users to create and view posts. The project includes backend and frontend test coverage.
 
-## Assignment Overview
+---
 
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+## 📁 Project Structure
 
-## Getting Started
+```
+mern-assignment-app/
+│
+├── client/             # React frontend
+│   ├── src/
+│   └── ...
+│
+├── server/             # Express backend with MongoDB
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── middleware/
+│   └── ...
+│
+├── tests/              # Unit and integration tests
+│
+└── README.md
+```
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
+---
 
-## Files Included
+## 🚀 Features
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+- ✅ Create and view posts
+- ✅ Full CRUD logic in Express
+- ✅ MongoDB via Mongoose
+- ✅ Responsive React UI (with Tailwind CSS)
+- ✅ Unit and integration testing (Jest, React Testing Library)
+- ✅ Environment-based config using `.env`
 
-## Requirements
+---
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+## 🧪 Testing
 
-## Deployment Platforms
+### ✅ Backend
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+- **Unit and integration tests** for API endpoints
+- Located in: `server/tests/unit/` and `server/tests/integration/`
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
+Run backend tests:
 
-## CI/CD Pipeline
+```bash
+cd server
+npm install
+npm test
+```
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
+### ✅ Frontend
 
-## Submission
+- Unit test for `<Button />` component using React Testing Library
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+Run frontend tests:
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
+```bash
+cd client
+npm install
+npm test
+```
 
-## Resources
+---
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+## 🛠️ Tech Stack
+
+| Layer      | Tech                                 |
+|------------|--------------------------------------|
+| Frontend   | React, Tailwind CSS                  |
+| Backend    | Express.js, Node.js                  |
+| Database   | MongoDB with Mongoose                |
+| Testing    | Jest, Supertest, React Testing Library |
+| Versioning | Git + GitHub                         |
+
+---
+
+## 🌐 API Endpoints (Backend)
+
+Base URL: `http://localhost:5000/api/posts`
+
+| Method | Route              | Description        |
+|--------|--------------------|--------------------|
+| GET    | `/`                | Health check       |
+| GET    | `/api/posts`       | Get all posts      |
+| POST   | `/api/posts`       | Create a new post  |
+| GET    | `/api/posts/:id`   | Get single post    |
+| PUT    | `/api/posts/:id`   | Update post        |
+| DELETE | `/api/posts/:id`   | Delete post        |
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the Repo
+
+```bash
+git clone https://github.com/your-username/mern-assignment-app.git
+cd mern-assignment-app
+```
+
+### 2. Setup Server
+
+```bash
+cd server
+npm install
+
+# Create a .env file in /server with:
+# MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/your-db
+
+npm run dev
+```
+
+### 3. Setup Client
+
+```bash
+cd client
+npm install
+npm start
+```
+
+---
+
+## 📸 Screenshots
+
+> 📷 Include screenshots of:
+### ✅ App UI
+![App UI](./client/public/screenshots/Screenshot%202025-07-17%20183301.png)
+
+### ✅ Frontend Tests
+![Frontend Tests](./client/public/screenshots/Screenshot%202025-07-17%20191359.png)
+
+### ✅ Backend Tests
+![Backend Tests](./client/public/screenshots//Screenshot%202025-07-17%20191835.png)
+
+---
+
+
+
