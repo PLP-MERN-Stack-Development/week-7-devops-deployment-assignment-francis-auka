@@ -1,144 +1,35 @@
-# MERN Assignment App
+## 🚀 Project Deployment & Monitoring
 
-This is a full-stack MERN (MongoDB, Express.js, React, Node.js) application built as part of a school assignment. It allows users to create and view posts. The project includes backend and frontend test coverage.
-
----
-
-## 📁 Project Structure
-
-```
-mern-assignment-app/
-│
-├── client/             # React frontend
-│   ├── src/
-│   └── ...
-│
-├── server/             # Express backend with MongoDB
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   └── middleware/
-│   └── ...
-│
-├── tests/              # Unit and integration tests
-│
-└── README.md
-```
-
----
-
-## 🚀 Features
-
-- ✅ Create and view posts
-- ✅ Full CRUD logic in Express
-- ✅ MongoDB via Mongoose
-- ✅ Responsive React UI (with Tailwind CSS)
-- ✅ Unit and integration testing (Jest, React Testing Library)
-- ✅ Environment-based config using `.env`
-
----
-
-## 🧪 Testing
+This MERN stack application is deployed with full CI/CD automation using GitHub Actions, Render, and Vercel.
 
 ### ✅ Backend
 
-- **Unit and integration tests** for API endpoints
-- Located in: `server/tests/unit/` and `server/tests/integration/`
+- **Platform**: Render  
+- **Live URL**: [Backend API](https://week-7-devops-deployment-assignment-dnr6.onrender.com)  
+- **Health Check Endpoint**: `/api/health`
 
-Run backend tests:
+> If the health check fails with a 404 error, make sure to add this route in your Express backend:
+>
+> ```js
+> app.get('/api/health', (req, res) => {
+>   res.status(200).json({ status: 'ok' });
+> });
+> ```
 
-```bash
-cd server
-npm install
-npm test
-```
+---
 
 ### ✅ Frontend
 
-- Unit test for `<Button />` component using React Testing Library
-
-Run frontend tests:
-
-```bash
-cd client
-npm install
-npm test
-```
+- **Platform**: Vercel  
+- **Live URL**: [Frontend App](https://week-7-devops-deployment-assignment-liart.vercel.app)
 
 ---
 
-## 🛠️ Tech Stack
+### 🛠️ CI/CD Setup
 
-| Layer      | Tech                                 |
-|------------|--------------------------------------|
-| Frontend   | React, Tailwind CSS                  |
-| Backend    | Express.js, Node.js                  |
-| Database   | MongoDB with Mongoose                |
-| Testing    | Jest, Supertest, React Testing Library |
-| Versioning | Git + GitHub                         |
+CI/CD is configured using GitHub Actions with the following stages:
 
----
-
-## 🌐 API Endpoints (Backend)
-
-Base URL: `http://localhost:5000/api/posts`
-
-| Method | Route              | Description        |
-|--------|--------------------|--------------------|
-| GET    | `/`                | Health check       |
-| GET    | `/api/posts`       | Get all posts      |
-| POST   | `/api/posts`       | Create a new post  |
-| GET    | `/api/posts/:id`   | Get single post    |
-| PUT    | `/api/posts/:id`   | Update post        |
-| DELETE | `/api/posts/:id`   | Delete post        |
-
----
-
-## ⚙️ Getting Started
-
-### 1. Clone the Repo
-
-```bash
-git clone https://github.com/your-username/mern-assignment-app.git
-cd mern-assignment-app
-```
-
-### 2. Setup Server
-
-```bash
-cd server
-npm install
-
-# Create a .env file in /server with:
-# MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/your-db
-
-npm run dev
-```
-
-### 3. Setup Client
-
-```bash
-cd client
-npm install
-npm start
-```
-
----
-
-## 📸 Screenshots
-
-> 📷 Include screenshots of:
-### ✅ App UI
-![App UI](./client/public/screenshots/Screenshot%202025-07-17%20183301.png)
-
-### ✅ Frontend Tests
-![Frontend Tests](./client/public/screenshots/Screenshot%202025-07-17%20191359.png)
-
-### ✅ Backend Tests
-![Backend Tests](./client/public/screenshots//Screenshot%202025-07-17%20191835.png)
-
----
-
-
-
+1. **Linting & Testing** – Backend & frontend code are linted and tested.  
+2. **Build Artifacts** – Frontend build artifacts are uploaded.  
+3. **Deployment** – Backend is deployed to Render, frontend to Vercel.  
+4. **Monitoring** – Health checks are run against both URLs after deployment.
