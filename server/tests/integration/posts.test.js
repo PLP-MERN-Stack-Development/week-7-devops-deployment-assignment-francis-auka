@@ -6,7 +6,6 @@ import request from 'supertest';
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import app from '../../src/app.js';
-import Post from '../../src/models/Post.js';
 
 let mongoServer;
 
